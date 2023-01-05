@@ -1,0 +1,1848 @@
+{
+    "projects": [
+        {
+            "id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+            "client_id": "107daf87-cfb5-47b9-9f63-379d83b0c34f",
+            "code": "YP1",
+            "estimated_start_date": "2022-09-07",
+            "estimated_end_date": "2022-09-14",
+            "actual_start_date": "2022-09-19",
+            "actual_end_date": "2022-09-30",
+            "name": "Yellow pages",
+            "status": "in_progress",
+            "description": "Yellow pages are the project for data mapping",
+            "color": "a43260",
+            "is_public": 0,
+            "type": "fix_cost",
+            "work_type": "productive",
+            "task_number_preference": 12,
+            "is_billable": 1,
+            "billable_rate": null,
+            "consider_project_rate": 1,
+            "estimate_type": "no",
+            "time_estimated": 50,
+            "budget_estimated": 90,
+            "is_active": true,
+            "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "updated_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+            "created_at": "2022-09-13T10:51:22.000000Z",
+            "updated_at": "2022-11-08T11:36:57.000000Z",
+            "time_spent_minutes": 4978,
+            "time_sheet_total_time": "0:0",
+            "client": {
+                "id": "107daf87-cfb5-47b9-9f63-379d83b0c34f",
+                "name": "David",
+                "is_active": 1,
+                "country_id": 13,
+                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "created_at": "2022-09-09T09:55:07.000000Z",
+                "updated_at": "2022-09-09T10:32:27.000000Z",
+                "country": {
+                    "id": 13,
+                    "sortname": "AU",
+                    "name": "Australia",
+                    "phonecode": 61
+                }
+            },
+            "project_user": [
+                {
+                    "id": "143983bc-6a72-4da9-a513-0b1dac7a6733",
+                    "project_id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                    "access_rights": "project_owner",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 10,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-13T12:09:24.000000Z",
+                    "updated_at": "2022-09-13T12:09:24.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-13",
+                    "expected_assignment_end_date": "2022-09-27",
+                    "time_spent": 1403,
+                    "users": {
+                        "id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "email": "rahulsp@zignuts.com",
+                        "name": "Rahul",
+                        "last_name": "Pathak",
+                        "role": "SA",
+                        "phone": "7069891039",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp7MzaO6aG09qoz0cwEg4_FhpiNLsyBGmi9KZy1R=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "103155778908353459971",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:20:33.000000Z",
+                        "updated_at": "2022-12-12T14:24:47.000000Z",
+                        "full_name": "Rahul Pathak",
+                        "primary_skills": [
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            },
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "26d711da-603a-4e8d-99a7-aaf2e210fa92",
+                    "project_id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                    "access_rights": "project_owner",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 10,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-13T11:29:51.000000Z",
+                    "updated_at": "2022-09-13T11:29:51.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-13",
+                    "expected_assignment_end_date": "2022-09-21",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "email": "divyeshp@zignuts.com",
+                        "name": "Divyesh",
+                        "last_name": "Patel",
+                        "role": "SA",
+                        "phone": "9537774775",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp5Tvg255GFtDzk19WCD7lMletWcZ45eMJnY95B4=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                        "manage_by": "8159bf3a-2e01-491b-af7c-52f24f3a1b83",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "108861990029865800746",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-12-08T11:58:42.000000Z",
+                        "full_name": "Divyesh Patel",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            },
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "554a480a-2286-4964-9fe9-217fd8b220ca",
+                    "project_id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+                    "user_id": "ec7cb6b1-ae8b-45b9-b3a3-fee59e5820ee",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                    "updated_by": null,
+                    "created_at": "2022-12-14T07:14:58.000000Z",
+                    "updated_at": "2022-12-14T07:14:58.000000Z",
+                    "assignment": 30,
+                    "expected_assignment_start_date": "2022-12-13",
+                    "expected_assignment_end_date": "2022-12-31",
+                    "time_spent": 37,
+                    "users": {
+                        "id": "ec7cb6b1-ae8b-45b9-b3a3-fee59e5820ee",
+                        "email": "neelj@zignuts.com",
+                        "name": "Neel",
+                        "last_name": "Joshi",
+                        "role": "EMP",
+                        "phone": "8200159332",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp58iSYMeXBjeM4qEonMZMMcGHImmbgHh7r9rEpW=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": "FnDRUTeZ8rDaRzANmkGu",
+                        "social_id": "111548531461450918765",
+                        "social_type": "google",
+                        "created_at": "2022-12-14T07:12:22.000000Z",
+                        "updated_at": "2022-12-14T07:14:14.000000Z",
+                        "full_name": "Neel Joshi",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "ec7cb6b1-ae8b-45b9-b3a3-fee59e5820ee",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "project_scopes": [
+                {
+                    "id": "2592918f-1fdd-4fcc-88ba-367654e39cf3",
+                    "name": "Web App",
+                    "color": "123456",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": null,
+                    "pivot": {
+                        "project_id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+                        "project_scope_id": "2592918f-1fdd-4fcc-88ba-367654e39cf3"
+                    }
+                },
+                {
+                    "id": "3bf54b54-6b30-464a-9938-2e31d580d9f0",
+                    "name": "Website",
+                    "color": "b210da",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T10:43:46.000000Z",
+                    "updated_at": "2022-09-09T13:12:07.000000Z",
+                    "pivot": {
+                        "project_id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+                        "project_scope_id": "3bf54b54-6b30-464a-9938-2e31d580d9f0"
+                    }
+                },
+                {
+                    "id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab",
+                    "name": "IOS",
+                    "color": "c43b3b",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": "2022-09-21T04:22:30.000000Z",
+                    "pivot": {
+                        "project_id": "da8bfc56-d152-4f35-82b9-31714cca6c7e",
+                        "project_scope_id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+            "client_id": "c77d0181-0aa2-4a27-ade5-1fbe37f7b66a",
+            "code": "8765",
+            "estimated_start_date": null,
+            "estimated_end_date": null,
+            "actual_start_date": null,
+            "actual_end_date": null,
+            "name": "WEB FlOW",
+            "status": "in_planning",
+            "description": "WEB FLOW FOR OUR WEBSITE",
+            "color": "37e14b",
+            "is_public": 0,
+            "type": "fix_timeline",
+            "work_type": "productive",
+            "task_number_preference": 6,
+            "is_billable": 1,
+            "billable_rate": null,
+            "consider_project_rate": 1,
+            "estimate_type": "no",
+            "time_estimated": 2500,
+            "budget_estimated": null,
+            "is_active": true,
+            "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "updated_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+            "created_at": "2022-09-13T07:13:23.000000Z",
+            "updated_at": "2022-10-17T05:29:33.000000Z",
+            "time_spent_minutes": 10243,
+            "time_sheet_total_time": "0:0",
+            "client": {
+                "id": "c77d0181-0aa2-4a27-ade5-1fbe37f7b66a",
+                "name": "mario Ghechici",
+                "is_active": 1,
+                "country_id": 53,
+                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "created_at": "2022-09-09T13:11:13.000000Z",
+                "updated_at": "2022-09-21T04:07:17.000000Z",
+                "country": {
+                    "id": 53,
+                    "sortname": "CI",
+                    "name": "Cote D'Ivoire (Ivory Coast)",
+                    "phonecode": 225
+                }
+            },
+            "project_user": [
+                {
+                    "id": "1219a621-a39c-4a0c-a96a-e1d01e8ac165",
+                    "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                    "user_id": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                    "access_rights": "project_owner",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 10,
+                    "created_by": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                    "updated_by": null,
+                    "created_at": "2022-11-28T08:35:37.000000Z",
+                    "updated_at": "2022-11-28T08:35:37.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-11-01",
+                    "expected_assignment_end_date": "2022-11-30",
+                    "time_spent": 9440,
+                    "users": {
+                        "id": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "email": "ravirajc@zignuts.com",
+                        "name": "Raviraj",
+                        "last_name": "Chhasatiya",
+                        "role": "SA",
+                        "phone": "9106619998",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp4n2eRxs4IwUd1aO2zKmLyEHDsF8yjACA6p1tzR=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "107736619002857974562",
+                        "social_type": "google",
+                        "created_at": "2022-09-09T05:16:25.000000Z",
+                        "updated_at": "2022-12-13T05:47:31.000000Z",
+                        "full_name": "Raviraj Chhasatiya",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "1a8086fb-e2b8-4b03-af86-6de64ce5bbb5",
+                    "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                    "user_id": "dc27012c-568a-426b-85c1-ad61904c0e61",
+                    "access_rights": "co_ordinator",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 999,
+                    "created_by": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                    "updated_by": null,
+                    "created_at": "2022-09-15T10:31:58.000000Z",
+                    "updated_at": "2022-09-15T10:31:58.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-06",
+                    "expected_assignment_end_date": "2022-09-14",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "dc27012c-568a-426b-85c1-ad61904c0e61",
+                        "email": "dhavalp@zignuts.com",
+                        "name": "dhaval",
+                        "last_name": "prajapati",
+                        "role": "EMP",
+                        "phone": "8888888888",
+                        "picture": null,
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                        "manage_by": "7be105e3-db17-40fa-b7cb-87d421876706",
+                        "status": "invited",
+                        "is_active": true,
+                        "email_token": "HxqyqG0FiIaGAC2ebahv",
+                        "social_id": null,
+                        "social_type": null,
+                        "created_at": "2022-09-12T09:26:32.000000Z",
+                        "updated_at": "2022-10-17T07:37:07.000000Z",
+                        "full_name": "Dhaval Prajapati",
+                        "primary_skills": [
+                            {
+                                "id": "194f38fb-1f31-434c-99ff-2d07f342dd76",
+                                "name": "ReactJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:50:24.000000Z",
+                                "pivot": {
+                                    "user_id": "dc27012c-568a-426b-85c1-ad61904c0e61",
+                                    "primary_skill_id": "194f38fb-1f31-434c-99ff-2d07f342dd76"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "7fefe9e2-9471-4eca-8a06-1a6ab797b8d5",
+                    "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                    "user_id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                    "access_rights": "co_ordinator",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 100,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                    "created_at": "2022-09-14T06:48:17.000000Z",
+                    "updated_at": "2022-09-20T09:10:20.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-08-31",
+                    "expected_assignment_end_date": "2022-09-21",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                        "email": "virajv@zignuts.com",
+                        "name": "Viraj",
+                        "last_name": "Vasti",
+                        "role": "EMP",
+                        "phone": "8306160405",
+                        "picture": "https://lh3.googleusercontent.com/a/AItbvml-ZeHQouqGwCBRdyg8HmBObalMwOLuwRWXX8i2=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "102669346876592867553",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-09-09T10:27:08.000000Z",
+                        "full_name": "Viraj Vasti",
+                        "primary_skills": [
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "cbf7927f-9f4d-4b15-9a9f-2320dfda3706",
+                    "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                    "user_id": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-13T13:36:51.000000Z",
+                    "updated_at": "2022-09-13T13:36:51.000000Z",
+                    "assignment": 50,
+                    "expected_assignment_start_date": "2022-09-21",
+                    "expected_assignment_end_date": "2022-09-30",
+                    "time_spent": 223,
+                    "users": {
+                        "id": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                        "email": "tanmaym@zignuts.com",
+                        "name": "Tanmay",
+                        "last_name": "Modi",
+                        "role": "EMP",
+                        "phone": null,
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp5CwmAXkHB8rvTs15ao2Hk-ibA3WiZgF7-dC5f6=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "manage_by": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "111552738748401602317",
+                        "social_type": "google",
+                        "created_at": "2022-09-13T11:04:39.000000Z",
+                        "updated_at": "2022-12-15T06:08:11.000000Z",
+                        "full_name": "Tanmay Modi",
+                        "primary_skills": [
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            },
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            },
+                            {
+                                "id": "194f38fb-1f31-434c-99ff-2d07f342dd76",
+                                "name": "ReactJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:50:24.000000Z",
+                                "pivot": {
+                                    "user_id": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                                    "primary_skill_id": "194f38fb-1f31-434c-99ff-2d07f342dd76"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "project_scopes": [
+                {
+                    "id": "2592918f-1fdd-4fcc-88ba-367654e39cf3",
+                    "name": "Web App",
+                    "color": "123456",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": null,
+                    "pivot": {
+                        "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                        "project_scope_id": "2592918f-1fdd-4fcc-88ba-367654e39cf3"
+                    }
+                },
+                {
+                    "id": "3bf54b54-6b30-464a-9938-2e31d580d9f0",
+                    "name": "Website",
+                    "color": "b210da",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T10:43:46.000000Z",
+                    "updated_at": "2022-09-09T13:12:07.000000Z",
+                    "pivot": {
+                        "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                        "project_scope_id": "3bf54b54-6b30-464a-9938-2e31d580d9f0"
+                    }
+                },
+                {
+                    "id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab",
+                    "name": "IOS",
+                    "color": "c43b3b",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": "2022-09-21T04:22:30.000000Z",
+                    "pivot": {
+                        "project_id": "c5a0ed9f-4d61-4132-9ad7-ee68ecd0ae7c",
+                        "project_scope_id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+            "client_id": "c77d0181-0aa2-4a27-ade5-1fbe37f7b66a",
+            "code": "GFT",
+            "estimated_start_date": "2022-08-01",
+            "estimated_end_date": "2022-10-06",
+            "actual_start_date": "2022-08-17",
+            "actual_end_date": "2022-09-30",
+            "name": "GFT",
+            "status": "in_planning",
+            "description": "GFT is the project for the good soul mates",
+            "color": "e01f90",
+            "is_public": 0,
+            "type": "fix_cost",
+            "work_type": "productive",
+            "task_number_preference": 6,
+            "is_billable": 1,
+            "billable_rate": null,
+            "consider_project_rate": 1,
+            "estimate_type": "no",
+            "time_estimated": 120,
+            "budget_estimated": 20,
+            "is_active": true,
+            "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "created_at": "2022-09-12T12:57:50.000000Z",
+            "updated_at": "2022-09-13T09:45:08.000000Z",
+            "time_spent_minutes": 2368,
+            "time_sheet_total_time": "0:0",
+            "client": {
+                "id": "c77d0181-0aa2-4a27-ade5-1fbe37f7b66a",
+                "name": "mario Ghechici",
+                "is_active": 1,
+                "country_id": 53,
+                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "created_at": "2022-09-09T13:11:13.000000Z",
+                "updated_at": "2022-09-21T04:07:17.000000Z",
+                "country": {
+                    "id": 53,
+                    "sortname": "CI",
+                    "name": "Cote D'Ivoire (Ivory Coast)",
+                    "phonecode": 225
+                }
+            },
+            "project_user": [
+                {
+                    "id": "1d77c0f9-5177-4364-b7be-fd82af5aa75e",
+                    "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                    "access_rights": "co_ordinator",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 10,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-16T11:17:15.000000Z",
+                    "updated_at": "2022-09-16T11:17:15.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-16",
+                    "expected_assignment_end_date": "2022-09-22",
+                    "time_spent": 127,
+                    "users": {
+                        "id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "email": "rahulsp@zignuts.com",
+                        "name": "Rahul",
+                        "last_name": "Pathak",
+                        "role": "SA",
+                        "phone": "7069891039",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp7MzaO6aG09qoz0cwEg4_FhpiNLsyBGmi9KZy1R=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "103155778908353459971",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:20:33.000000Z",
+                        "updated_at": "2022-12-12T14:24:47.000000Z",
+                        "full_name": "Rahul Pathak",
+                        "primary_skills": [
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            },
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "981dd927-444a-4c84-bbbb-f044b1709afa",
+                    "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                    "user_id": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-12T13:06:57.000000Z",
+                    "updated_at": "2022-09-12T13:06:57.000000Z",
+                    "assignment": 69,
+                    "expected_assignment_start_date": "2022-09-13",
+                    "expected_assignment_end_date": "2022-09-28",
+                    "time_spent": 154,
+                    "users": {
+                        "id": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "email": "ravirajc@zignuts.com",
+                        "name": "Raviraj",
+                        "last_name": "Chhasatiya",
+                        "role": "SA",
+                        "phone": "9106619998",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp4n2eRxs4IwUd1aO2zKmLyEHDsF8yjACA6p1tzR=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "107736619002857974562",
+                        "social_type": "google",
+                        "created_at": "2022-09-09T05:16:25.000000Z",
+                        "updated_at": "2022-12-13T05:47:31.000000Z",
+                        "full_name": "Raviraj Chhasatiya",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "999ba4be-f6b6-42b1-97a8-18566da2f8ab",
+                    "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                    "user_id": "ec7cb6b1-ae8b-45b9-b3a3-fee59e5820ee",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                    "updated_by": null,
+                    "created_at": "2022-12-14T07:15:34.000000Z",
+                    "updated_at": "2022-12-14T07:15:34.000000Z",
+                    "assignment": 20,
+                    "expected_assignment_start_date": "2022-12-13",
+                    "expected_assignment_end_date": "2023-01-31",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "ec7cb6b1-ae8b-45b9-b3a3-fee59e5820ee",
+                        "email": "neelj@zignuts.com",
+                        "name": "Neel",
+                        "last_name": "Joshi",
+                        "role": "EMP",
+                        "phone": "8200159332",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp58iSYMeXBjeM4qEonMZMMcGHImmbgHh7r9rEpW=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": "FnDRUTeZ8rDaRzANmkGu",
+                        "social_id": "111548531461450918765",
+                        "social_type": "google",
+                        "created_at": "2022-12-14T07:12:22.000000Z",
+                        "updated_at": "2022-12-14T07:14:14.000000Z",
+                        "full_name": "Neel Joshi",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "ec7cb6b1-ae8b-45b9-b3a3-fee59e5820ee",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "9a7ad851-a8f0-4e9e-8b01-214777442a3c",
+                    "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-12T13:00:46.000000Z",
+                    "updated_at": "2022-09-12T13:00:46.000000Z",
+                    "assignment": 50,
+                    "expected_assignment_start_date": "2022-10-11",
+                    "expected_assignment_end_date": "2022-11-30",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                        "email": "nisargv@zignuts.com",
+                        "name": "Nisarg",
+                        "last_name": "Vyas",
+                        "role": "EMP",
+                        "phone": "8733951388",
+                        "picture": null,
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": null,
+                        "social_type": null,
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-09-14T04:56:58.000000Z",
+                        "full_name": "Nisarg Vyas",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            },
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "9d842eb2-8e0e-4da8-ab9d-e191e4a9412a",
+                    "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                    "user_id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                    "access_rights": "project_owner",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 40,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-12T12:59:45.000000Z",
+                    "updated_at": "2022-09-12T12:59:45.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-14",
+                    "expected_assignment_end_date": "2022-09-29",
+                    "time_spent": 2007,
+                    "users": {
+                        "id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                        "email": "virajv@zignuts.com",
+                        "name": "Viraj",
+                        "last_name": "Vasti",
+                        "role": "EMP",
+                        "phone": "8306160405",
+                        "picture": "https://lh3.googleusercontent.com/a/AItbvml-ZeHQouqGwCBRdyg8HmBObalMwOLuwRWXX8i2=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "102669346876592867553",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-09-09T10:27:08.000000Z",
+                        "full_name": "Viraj Vasti",
+                        "primary_skills": [
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "dcc3fa9b-a6b8-4bcc-a5ab-6fa3ccfb8030",
+                    "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                    "user_id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-12T13:01:14.000000Z",
+                    "updated_at": "2022-09-12T13:01:29.000000Z",
+                    "assignment": 90,
+                    "expected_assignment_start_date": "2022-09-14",
+                    "expected_assignment_end_date": "2022-09-28",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                        "email": "parthm@zignuts.com",
+                        "name": "Parth",
+                        "last_name": "Mali",
+                        "role": "HR",
+                        "phone": "9173821045",
+                        "picture": null,
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "101065207046239510379",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:06:10.000000Z",
+                        "updated_at": "2022-11-25T12:21:50.000000Z",
+                        "full_name": "Parth Mali",
+                        "primary_skills": [
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            },
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "project_scopes": [
+                {
+                    "id": "3bf54b54-6b30-464a-9938-2e31d580d9f0",
+                    "name": "Website",
+                    "color": "b210da",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T10:43:46.000000Z",
+                    "updated_at": "2022-09-09T13:12:07.000000Z",
+                    "pivot": {
+                        "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                        "project_scope_id": "3bf54b54-6b30-464a-9938-2e31d580d9f0"
+                    }
+                },
+                {
+                    "id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab",
+                    "name": "IOS",
+                    "color": "c43b3b",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": "2022-09-21T04:22:30.000000Z",
+                    "pivot": {
+                        "project_id": "c52d1519-00dc-40b1-9185-5bd0b97b3d12",
+                        "project_scope_id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+            "client_id": "1ef8260c-6b9b-4990-98bc-b0f0fe838946",
+            "code": "HP",
+            "estimated_start_date": "2021-03-20",
+            "estimated_end_date": "2021-06-20",
+            "actual_start_date": "2021-03-21",
+            "actual_end_date": "2021-06-01",
+            "name": "Hamilton Project",
+            "status": "in_progress",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing",
+            "color": "d50101",
+            "is_public": 0,
+            "type": "fix_cost",
+            "work_type": "productive",
+            "task_number_preference": 8,
+            "is_billable": 1,
+            "billable_rate": null,
+            "consider_project_rate": 1,
+            "estimate_type": "no",
+            "time_estimated": null,
+            "budget_estimated": null,
+            "is_active": null,
+            "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "updated_by": "7be105e3-db17-40fa-b7cb-87d421876706",
+            "created_at": "2022-09-08T10:02:41.000000Z",
+            "updated_at": "2022-09-16T12:36:13.000000Z",
+            "time_spent_minutes": 483,
+            "time_sheet_total_time": "0:0",
+            "client": {
+                "id": "1ef8260c-6b9b-4990-98bc-b0f0fe838946",
+                "name": "Olivia",
+                "is_active": 1,
+                "country_id": 141,
+                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "created_at": "2022-09-08T10:02:41.000000Z",
+                "updated_at": "2022-09-14T11:58:17.000000Z",
+                "country": {
+                    "id": 141,
+                    "sortname": "YT",
+                    "name": "Mayotte",
+                    "phonecode": 269
+                }
+            },
+            "project_user": [
+                {
+                    "id": "282aee91-8f3b-4eaa-b558-5459d80117ed",
+                    "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                    "user_id": "7be105e3-db17-40fa-b7cb-87d421876706",
+                    "access_rights": "co_ordinator",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-16T12:45:44.000000Z",
+                    "updated_at": "2022-09-16T12:45:44.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-16",
+                    "expected_assignment_end_date": "2022-09-17",
+                    "time_spent": 63,
+                    "users": {
+                        "id": "7be105e3-db17-40fa-b7cb-87d421876706",
+                        "email": "rahuls@zignuts.com",
+                        "name": "rahul",
+                        "last_name": "solanki",
+                        "role": "EMP",
+                        "phone": "8141475750",
+                        "picture": null,
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                        "manage_by": "1b17669a-eabe-4766-8d51-c979086be5eb",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "112656908928992099138",
+                        "social_type": "google",
+                        "created_at": "2022-09-12T06:30:58.000000Z",
+                        "updated_at": "2022-10-17T07:31:09.000000Z",
+                        "full_name": "Rahul Solanki",
+                        "primary_skills": [
+                            {
+                                "id": "87248046-3a47-4f5d-a1f6-eae986d82aa4",
+                                "name": "Angular",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-09T13:12:51.000000Z",
+                                "updated_at": "2022-09-21T04:42:13.000000Z",
+                                "pivot": {
+                                    "user_id": "7be105e3-db17-40fa-b7cb-87d421876706",
+                                    "primary_skill_id": "87248046-3a47-4f5d-a1f6-eae986d82aa4"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "7be105e3-db17-40fa-b7cb-87d421876706",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            },
+                            {
+                                "id": "194f38fb-1f31-434c-99ff-2d07f342dd76",
+                                "name": "ReactJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:50:24.000000Z",
+                                "pivot": {
+                                    "user_id": "7be105e3-db17-40fa-b7cb-87d421876706",
+                                    "primary_skill_id": "194f38fb-1f31-434c-99ff-2d07f342dd76"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "3bbf0b01-5fa6-485e-a46c-03ff8899f29a",
+                    "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                    "user_id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T11:03:08.000000Z",
+                    "updated_at": "2022-09-13T10:52:00.000000Z",
+                    "assignment": 55,
+                    "expected_assignment_start_date": "2022-09-01",
+                    "expected_assignment_end_date": "2022-11-30",
+                    "time_spent": 120,
+                    "users": {
+                        "id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                        "email": "parthm@zignuts.com",
+                        "name": "Parth",
+                        "last_name": "Mali",
+                        "role": "HR",
+                        "phone": "9173821045",
+                        "picture": null,
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "101065207046239510379",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:06:10.000000Z",
+                        "updated_at": "2022-11-25T12:21:50.000000Z",
+                        "full_name": "Parth Mali",
+                        "primary_skills": [
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            },
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "0f7ae9a0-a2d9-4aad-9007-a37d12711af2",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "968b79f5-9085-401e-9d06-3a1ccc8b6732",
+                    "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                    "access_rights": "co_ordinator",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 15,
+                    "created_by": "7be105e3-db17-40fa-b7cb-87d421876706",
+                    "updated_by": "7be105e3-db17-40fa-b7cb-87d421876706",
+                    "created_at": "2022-09-15T10:05:47.000000Z",
+                    "updated_at": "2022-09-15T10:07:27.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-15",
+                    "expected_assignment_end_date": "2022-09-15",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "email": "divyeshp@zignuts.com",
+                        "name": "Divyesh",
+                        "last_name": "Patel",
+                        "role": "SA",
+                        "phone": "9537774775",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp5Tvg255GFtDzk19WCD7lMletWcZ45eMJnY95B4=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                        "manage_by": "8159bf3a-2e01-491b-af7c-52f24f3a1b83",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "108861990029865800746",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-12-08T11:58:42.000000Z",
+                        "full_name": "Divyesh Patel",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            },
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "e59d1066-3ceb-43fe-9c5d-5e1438f3ae86",
+                    "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-12T06:05:36.000000Z",
+                    "updated_at": "2022-09-13T10:49:34.000000Z",
+                    "assignment": 12,
+                    "expected_assignment_start_date": "2022-09-12",
+                    "expected_assignment_end_date": "2022-09-19",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                        "email": "nisargv@zignuts.com",
+                        "name": "Nisarg",
+                        "last_name": "Vyas",
+                        "role": "EMP",
+                        "phone": "8733951388",
+                        "picture": null,
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": null,
+                        "social_type": null,
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-09-14T04:56:58.000000Z",
+                        "full_name": "Nisarg Vyas",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            },
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "1d5de0cf-ce39-44df-b4d5-1db2b4ff6d54",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "ff039808-2c10-4573-8778-8f17a174e5bb",
+                    "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                    "user_id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                    "access_rights": "co_ordinator",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "7be105e3-db17-40fa-b7cb-87d421876706",
+                    "updated_by": null,
+                    "created_at": "2022-09-16T13:06:30.000000Z",
+                    "updated_at": "2022-09-16T13:06:30.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-17",
+                    "expected_assignment_end_date": "2022-09-30",
+                    "time_spent": 0,
+                    "users": {
+                        "id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                        "email": "virajv@zignuts.com",
+                        "name": "Viraj",
+                        "last_name": "Vasti",
+                        "role": "EMP",
+                        "phone": "8306160405",
+                        "picture": "https://lh3.googleusercontent.com/a/AItbvml-ZeHQouqGwCBRdyg8HmBObalMwOLuwRWXX8i2=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "manage_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "102669346876592867553",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-09-09T10:27:08.000000Z",
+                        "full_name": "Viraj Vasti",
+                        "primary_skills": [
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "6dfd9efa-c794-4650-86b7-3c957d64f7b4",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "project_scopes": [
+                {
+                    "id": "2592918f-1fdd-4fcc-88ba-367654e39cf3",
+                    "name": "Web App",
+                    "color": "123456",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": null,
+                    "pivot": {
+                        "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                        "project_scope_id": "2592918f-1fdd-4fcc-88ba-367654e39cf3"
+                    }
+                },
+                {
+                    "id": "3bf54b54-6b30-464a-9938-2e31d580d9f0",
+                    "name": "Website",
+                    "color": "b210da",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T10:43:46.000000Z",
+                    "updated_at": "2022-09-09T13:12:07.000000Z",
+                    "pivot": {
+                        "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                        "project_scope_id": "3bf54b54-6b30-464a-9938-2e31d580d9f0"
+                    }
+                },
+                {
+                    "id": "533b1332-36e3-4c1c-923b-e9a7129dfbe0",
+                    "name": "Admin Panel",
+                    "color": "28e6d0",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": "2022-09-15T07:07:59.000000Z",
+                    "pivot": {
+                        "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                        "project_scope_id": "533b1332-36e3-4c1c-923b-e9a7129dfbe0"
+                    }
+                },
+                {
+                    "id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab",
+                    "name": "IOS",
+                    "color": "c43b3b",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": "2022-09-21T04:22:30.000000Z",
+                    "pivot": {
+                        "project_id": "9f348374-eb55-478a-bb5c-27133d3926c2",
+                        "project_scope_id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "9cde9b7f-68a2-4b16-8aad-5d514fcb0a42",
+            "client_id": "1ef8260c-6b9b-4990-98bc-b0f0fe838946",
+            "code": "HPSTR",
+            "estimated_start_date": "2022-09-09",
+            "estimated_end_date": "2022-10-31",
+            "actual_start_date": "2022-09-09",
+            "actual_end_date": "2022-10-30",
+            "name": "Hipstr",
+            "status": "in_progress",
+            "description": "hipstr",
+            "color": "a1ded7",
+            "is_public": 0,
+            "type": "dedicated",
+            "work_type": "productive",
+            "task_number_preference": 9,
+            "is_billable": 1,
+            "billable_rate": null,
+            "consider_project_rate": 1,
+            "estimate_type": "no",
+            "time_estimated": 250,
+            "budget_estimated": null,
+            "is_active": true,
+            "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "updated_by": "d6f81711-faf7-4cac-b470-6ae3ff52e9c4",
+            "created_at": "2022-09-09T12:44:47.000000Z",
+            "updated_at": "2022-10-17T09:33:00.000000Z",
+            "time_spent_minutes": 1260,
+            "time_sheet_total_time": "0:0",
+            "client": {
+                "id": "1ef8260c-6b9b-4990-98bc-b0f0fe838946",
+                "name": "Olivia",
+                "is_active": 1,
+                "country_id": 141,
+                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "created_at": "2022-09-08T10:02:41.000000Z",
+                "updated_at": "2022-09-14T11:58:17.000000Z",
+                "country": {
+                    "id": 141,
+                    "sortname": "YT",
+                    "name": "Mayotte",
+                    "phonecode": 269
+                }
+            },
+            "project_user": [
+                {
+                    "id": "3f58603c-01ff-4dc4-b193-310841fade0d",
+                    "project_id": "9cde9b7f-68a2-4b16-8aad-5d514fcb0a42",
+                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                    "access_rights": "project_owner",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": 100,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-09T12:47:08.000000Z",
+                    "updated_at": "2022-09-09T12:47:08.000000Z",
+                    "assignment": null,
+                    "expected_assignment_start_date": "2022-09-09",
+                    "expected_assignment_end_date": "2022-10-31",
+                    "time_spent": 180,
+                    "users": {
+                        "id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "email": "divyeshp@zignuts.com",
+                        "name": "Divyesh",
+                        "last_name": "Patel",
+                        "role": "SA",
+                        "phone": "9537774775",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp5Tvg255GFtDzk19WCD7lMletWcZ45eMJnY95B4=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                        "manage_by": "8159bf3a-2e01-491b-af7c-52f24f3a1b83",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "108861990029865800746",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:02:41.000000Z",
+                        "updated_at": "2022-12-08T11:58:42.000000Z",
+                        "full_name": "Divyesh Patel",
+                        "primary_skills": [
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            },
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6b23ac39-6aec-4c59-b9ff-eb984ffc3d2d",
+                    "project_id": "9cde9b7f-68a2-4b16-8aad-5d514fcb0a42",
+                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                    "access_rights": "member",
+                    "project_billable_rate": "0.00",
+                    "is_active": true,
+                    "time_plan": null,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-09T12:47:28.000000Z",
+                    "updated_at": "2022-09-09T12:48:29.000000Z",
+                    "assignment": 60,
+                    "expected_assignment_start_date": "2022-09-09",
+                    "expected_assignment_end_date": "2022-10-11",
+                    "time_spent": 660,
+                    "users": {
+                        "id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                        "email": "rahulsp@zignuts.com",
+                        "name": "Rahul",
+                        "last_name": "Pathak",
+                        "role": "SA",
+                        "phone": "7069891039",
+                        "picture": "https://lh3.googleusercontent.com/a/AEdFTp7MzaO6aG09qoz0cwEg4_FhpiNLsyBGmi9KZy1R=s96-c",
+                        "actual_rate": "0.00",
+                        "billable_rate": "0.00",
+                        "reporting_to": "6f0e390a-ddce-4d06-99cb-de78e662143f",
+                        "manage_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                        "status": "joined",
+                        "is_active": true,
+                        "email_token": null,
+                        "social_id": "103155778908353459971",
+                        "social_type": "google",
+                        "created_at": "2022-09-08T10:20:33.000000Z",
+                        "updated_at": "2022-12-12T14:24:47.000000Z",
+                        "full_name": "Rahul Pathak",
+                        "primary_skills": [
+                            {
+                                "id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a",
+                                "name": "PHP Laravel",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": "2022-09-21T04:49:15.000000Z",
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "ffa727c0-1750-4dbb-8610-b3d6020ae00a"
+                                }
+                            },
+                            {
+                                "id": "aed54c1a-638e-4163-9f18-92592c65d142",
+                                "name": "Project Manager",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "created_at": "2022-09-08T12:15:07.000000Z",
+                                "updated_at": "2022-09-21T04:53:06.000000Z",
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "aed54c1a-638e-4163-9f18-92592c65d142"
+                                }
+                            },
+                            {
+                                "id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8",
+                                "name": "VueJs",
+                                "is_active": true,
+                                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                                "updated_by": null,
+                                "created_at": "2022-09-08T10:02:41.000000Z",
+                                "updated_at": null,
+                                "pivot": {
+                                    "user_id": "fb9ed3fd-0d08-42ff-9881-d8f4e5fa7063",
+                                    "primary_skill_id": "8aef7465-b031-436b-bcc4-ca9c19c1a3e8"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "project_scopes": [
+                {
+                    "id": "2592918f-1fdd-4fcc-88ba-367654e39cf3",
+                    "name": "Web App",
+                    "color": "123456",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": null,
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": null,
+                    "pivot": {
+                        "project_id": "9cde9b7f-68a2-4b16-8aad-5d514fcb0a42",
+                        "project_scope_id": "2592918f-1fdd-4fcc-88ba-367654e39cf3"
+                    }
+                },
+                {
+                    "id": "3bf54b54-6b30-464a-9938-2e31d580d9f0",
+                    "name": "Website",
+                    "color": "b210da",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T10:43:46.000000Z",
+                    "updated_at": "2022-09-09T13:12:07.000000Z",
+                    "pivot": {
+                        "project_id": "9cde9b7f-68a2-4b16-8aad-5d514fcb0a42",
+                        "project_scope_id": "3bf54b54-6b30-464a-9938-2e31d580d9f0"
+                    }
+                },
+                {
+                    "id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab",
+                    "name": "IOS",
+                    "color": "c43b3b",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T13:29:38.000000Z",
+                    "updated_at": "2022-09-21T04:22:30.000000Z",
+                    "pivot": {
+                        "project_id": "9cde9b7f-68a2-4b16-8aad-5d514fcb0a42",
+                        "project_scope_id": "5fe8ca88-5a0d-429c-809b-9e7599b903ab"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "8f0fdd5d-2ccb-4ac0-b2ba-fcd002bf847a",
+            "client_id": "107daf87-cfb5-47b9-9f63-379d83b0c34f",
+            "code": "info2",
+            "estimated_start_date": "2022-09-14",
+            "estimated_end_date": "2022-11-17",
+            "actual_start_date": "2022-12-13",
+            "actual_end_date": "2022-12-31",
+            "name": "infinity",
+            "status": "in_planning",
+            "description": "this project on water bottles . this company selling difference type of water bottles",
+            "color": "4e3a7e",
+            "is_public": 0,
+            "type": "fix_timeline",
+            "work_type": "productive",
+            "task_number_preference": 1,
+            "is_billable": 1,
+            "billable_rate": null,
+            "consider_project_rate": 1,
+            "estimate_type": "no",
+            "time_estimated": 520,
+            "budget_estimated": null,
+            "is_active": true,
+            "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+            "updated_by": null,
+            "created_at": "2022-09-13T07:37:02.000000Z",
+            "updated_at": "2022-09-13T07:37:02.000000Z",
+            "time_spent_minutes": 0,
+            "time_sheet_total_time": "0:0",
+            "client": {
+                "id": "107daf87-cfb5-47b9-9f63-379d83b0c34f",
+                "name": "David",
+                "is_active": 1,
+                "country_id": 13,
+                "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                "created_at": "2022-09-09T09:55:07.000000Z",
+                "updated_at": "2022-09-09T10:32:27.000000Z",
+                "country": {
+                    "id": 13,
+                    "sortname": "AU",
+                    "name": "Australia",
+                    "phonecode": 61
+                }
+            },
+            "project_user": [],
+            "project_scopes": [
+                {
+                    "id": "3bf54b54-6b30-464a-9938-2e31d580d9f0",
+                    "name": "Website",
+                    "color": "b210da",
+                    "is_active": true,
+                    "created_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "updated_by": "eb02f918-d9bb-43fb-b328-f9c4ecbc923f",
+                    "created_at": "2022-09-08T10:43:46.000000Z",
+                    "updated_at": "2022-09-09T13:12:07.000000Z",
+                    "pivot": {
+                        "project_id": "8f0fdd5d-2ccb-4ac0-b2ba-fcd002bf847a",
+                        "project_scope_id": "3bf54b54-6b30-464a-9938-2e31d580d9f0"
+                    }
+                }
+            ]
+        }
+    ],
+    "count": 9
+}
