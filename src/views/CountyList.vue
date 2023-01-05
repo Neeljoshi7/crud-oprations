@@ -1,48 +1,43 @@
 <template>
   <div>
     <SidebarForm
-      :isActive="stateSidebar"
-      @closeSidebar="stateSidebar = !stateSidebar"
+      :isActive="countySidebar"
+      @closeSidebar="countySidebar = !countySidebar"
       :formTitle="titleForm"
     >
       <!-- 
-      :nameValue="editEmployeeData.name"
-      :salaryValue="editEmployeeData.salary"
-      :ageValue="editEmployeeData.age"
-      :contactValue="editEmployeeData.phoneNo"
-      :addressValue="editEmployeeData.address"
-      :submitButton="submitBtn"
-      :cancelButton="cancelBtn"
-     -->
+        :nameValue="editEmployeeData.name"
+        :salaryValue="editEmployeeData.salary"
+        :ageValue="editEmployeeData.age"
+        :contactValue="editEmployeeData.phoneNo"
+        :addressValue="editEmployeeData.address"
+        :submitButton="submitBtn"
+        :cancelButton="cancelBtn"
+       -->
       <template #body>
         <b-form class="p-2">
-          <b-form-group label="State Name" label-for="state-name">
+          <b-form-group label="County Name" label-for="county-name">
             <b-form-input
-              id="state-name"
-              v-model="state_name"
+              id="county-name"
+              v-model="county_name"
               autofocus
               trim
-              placeholder="ex. Gujarat"
+              placeholder="ex. Ahmedabad"
             />
-            <!-- :value="editEmployeeData.name" -->
           </b-form-group>
-          <b-form-group label="State Code" label-for="code">
-            <b-form-input
-              id="code"
-              autofocus
-              trim
-              placeholder="GJ"
-              v-model="state_code"
-            />
-            <!-- :value="editEmployeeData.salary" -->
-          </b-form-group>
-
-          <div v-if="addState == true">
+          <label for="">Select State</label>
+          <b-form-select
+            v-model="stateSelected"
+            :options="allStates"
+            @input="getCounties"
+            class="mb-3"
+          />
+          <div v-if="addCounty == true">
             <b-button
               variant="outline-primary"
               size="md"
               class="float-right"
-              @click="stateSidebar = !stateSidebar"
+              @click="countySidebar = !countySidebar"
             >
               Cancel
             </b-button>
@@ -50,9 +45,9 @@
               variant="primary"
               size="md"
               class="float-right mr-1"
-              @click="addNewState"
+              @click="addNewCounty"
             >
-              Add State
+              Add County
             </b-button>
           </div>
 
@@ -61,7 +56,7 @@
               variant="outline-primary"
               size="md"
               class="float-right"
-              @click="stateSidebar = !stateSidebar"
+              @click="countySidebar = !countySidebar"
             >
               Cancel
             </b-button>
@@ -69,7 +64,7 @@
               variant="primary"
               size="md"
               class="float-right mr-1"
-              @click="editSubmitState"
+              @click="editSubmitCounty"
             >
               Edit State
             </b-button>
@@ -99,15 +94,13 @@
                 variant="primary"
                 class="mr-1"
                 @click="
-                  ((stateSidebar = !stateSidebar), (addState = !addState)),
-                    (titleForm = 'Add State')
+                  ((countySidebar = !countySidebar), (addCounty = !addCounty)),
+                    (titleForm = 'Add County')
                 "
               >
-                <span class="text-nowrap">Add New State</span>
+                <span class="text-nowrap">Add New County</span>
               </b-button>
-              <b-button
-                variant="warning"
-              >
+              <b-button variant="warning">
                 <span class="text-nowrap">Restore</span>
               </b-button>
             </div>
@@ -118,7 +111,7 @@
       <b-table
         ref="refUserListTable"
         class="position-relative"
-        :items="allStates"
+        :items="allCounties"
         :per-page="perPage"
         :current-page="currentPage"
         :fields="fields"
@@ -128,7 +121,7 @@
           <feather-icon
             class="ml-1 cursor-pointer text-success"
             icon="Edit2Icon"
-            @click="editState(states.item)"
+            @click="editCounties(states.item)"
             size="16"
           />
           <feather-icon
@@ -173,7 +166,7 @@
             variant="danger"
             size="md"
             class="float-right"
-            @click="deleteState()"
+            @click="deleteCounty()"
           >
             Delete
           </b-button>
@@ -185,8 +178,8 @@
     </b-modal>
   </div>
 </template>
-
-<script>
+  
+  <script>
 import vSelect from "vue-select";
 import Ripple from "vue-ripple-directive";
 import SidebarForm from "@/components/SidebarForm.vue";
@@ -199,6 +192,7 @@ import {
   BForm,
   BFormGroup,
   BFormFile,
+  BFormSelect,
   BFormInput,
   BMedia,
   BAvatar,
@@ -222,6 +216,7 @@ export default {
     BFormCheckbox,
     BFormFile,
     BFormInput,
+    BFormSelect,
     BMedia,
     BAvatar,
     BLink,
@@ -240,19 +235,21 @@ export default {
   data() {
     return {
       searchData: null,
+      stateSelected:null,
       state_id: null,
       deleteId: null,
-      state_name: null,
+      county_name: null,
       state_code: null,
       permanent_delete: false,
-      newState: {
+      newCounty: {
         name: null,
-        code: null,
+        state: null,
       },
-      stateSidebar: false,
-      addState: false,
+      countySidebar: false,
+      addCounty: false,
+      allCounties: null,
       allStates: null,
-      duplicateStates:null,
+      duplicateStates: null,
       titleForm: null,
       perPage: 10,
       currentPage: 1,
@@ -267,8 +264,8 @@ export default {
           label: "Name",
         },
         {
-          key: "code",
-          label: "State Code",
+          key: "state.name",
+          label: "State",
         },
         {
           key: "actions",
@@ -279,19 +276,20 @@ export default {
       ],
     };
   },
-  watch:{
-    searchData(){
-      this.allStates = duplicateStates.projects.filter(function (val) {
+  watch: {
+    searchData(nv) {
+      this.allCounties = this.duplicateStates.filter(function (val) {
         return val.name.toUpperCase().indexOf(nv.toUpperCase()) !== -1;
       });
     },
   },
   mounted() {
-    this.getState();
+    this.getCounty();
+    this.getState()
   },
   computed: {
     rows() {
-      return this.allStates.length;
+      return this.allCounties.length;
     },
   },
   methods: {
@@ -300,73 +298,8 @@ export default {
       this.token = obj;
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
       await this.$axios
-        .post("http://api.quotebuddy.net/api/v1/admin/state/list")
-        .then((response) => {
-          let state_data = response.data.data.states;
-          state_data.forEach((element) => {
-            element.value = element.id;
-            element.text = element.name;
-          });
-          this.allStates = state_data;
-          this.duplicateStates = state_data;
-          console.log("all states", this.allStates);
-        })
-        .catch((e) => {
-          console.log("error", e);
-        });
-    },
-
-    addNewState() {
-      // this.titleForm = "Add New State";
-      this.callCreateStateApi();
-      this.getState();
-    },
-    editState(state) {
-      console.log("state", state);
-      this.state_id = state.id;
-      this.state_name = state.name;
-      this.state_code = state.code;
-      this.stateSidebar = !this.stateSidebar;
-      this.addState = false;
-      this.titleForm = "Edit State";
-    },
-
-    async editSubmitState() {
-      let input = {
-        id: this.state_id,
-        name: this.state_name,
-        code: this.state_code,
-      };
-      await this.$axios
-        .post("http://api.quotebuddy.net/api/v1/admin/state/update", input)
-        // .then((response) => {
-        // let state_data = response.data.data.states;
-        // state_data.forEach((element) => {
-        //   element.value = element.id;
-        //   element.text = element.name;
-        // });
-        // this.allStates = state_data;
-        // console.log("all states", this.allStates);
-        // })
-        .catch((e) => {
-          console.log("error", e);
-        });
-
-      this.getState();
-      this.stateSidebar = !this.stateSidebar;
-    },
-    async callCreateStateApi() {
-      this.stateSidebar = !this.stateSidebar;
-      let obj = localStorage.getItem("access_token");
-      this.token = obj;
-      this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
-
-      let insertNewState = this.newState;
-
-      await this.$axios
         .post(
-          "http://api.quotebuddy.net/api/v1/admin/state/create",
-          insertNewState
+          "http://api.quotebuddy.net/api/v1/admin/state/list"
         )
         .then((response) => {
           let state_data = response.data.data.states;
@@ -375,40 +308,106 @@ export default {
             element.text = element.name;
           });
           this.allStates = state_data;
-          console.log("all states", this.allStates);
+          console.log("state_data", state_data);
+        })
+        .catch((e) => {
+          console.log("error", e);
+        });
+    },
+    async getCounty() {
+      let obj = localStorage.getItem("access_token");
+      this.token = obj;
+      this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
+      await this.$axios
+        .post("http://api.quotebuddy.net/api/v1/admin/county/list")
+        .then((response) => {
+          let county_data = response.data.data.county;
+          county_data.forEach((element) => {
+            element.text = element.name;
+            console.log("Neel", element)
+          });
+          this.allCounties = county_data;
+          this.duplicateStates = county_data;
+          console.log("all Counties", this.allCounties);
         })
         .catch((e) => {
           console.log("error", e);
         });
     },
 
-   async deleteState() {
-      console.log("this.delte :", this.deleteId);
+    addNewCounty() {
+      this.callCreateCountyApi();
+      this.getCounty();
+    },
+    editCounties(county) {
+      this.state_id = county.id;
+      this.county_name = county.name;
+      this.stateSelected = county.state_id;
+      this.countySidebar = !this.countySidebar;
+      this.addCounty = false;
+      this.titleForm = "Edit County";
+    },
 
+    async editSubmitCounty() {
+      let input = {
+        id: this.state_id,
+        name: this.county_name,
+        state_id : this.stateSelected
+      };
+      await this.$axios
+        .post("http://api.quotebuddy.net/api/v1/admin/county/update", input)
+        .catch((e) => {
+          console.log("error", e);
+        });
+
+      this.getCounty();
+      this.countySidebar = !this.countySidebar;
+    },
+    async callCreateCountyApi() {
+      this.countySidebar = !this.countySidebar;
+      let obj = localStorage.getItem("access_token");
+      this.token = obj;
+      this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
+
+      let insertNewCounty = {
+        name : this.county_name,
+        state_id: this.stateSelected
+      }
+
+      await this.$axios
+        .post(
+          "http://api.quotebuddy.net/api/v1/admin/county/create",
+          insertNewCounty
+        )
+        .then((response) => {
+          let county_data = response.data.data.counties;
+          county_data.forEach((element) => {
+            element.value = element.id;
+            element.text = element.name;
+          });
+          this.allCounties = county_data;
+          console.log("all states", this.allCounties);
+        })
+        .catch((e) => {
+          console.log("error", e);
+        });
+    },
+
+    async deleteCounty() {
       let input = {
         id: this.deleteId,
         permanent_delete: this.permanent_delete,
       };
-
       await this.$axios
-        .post("http://api.quotebuddy.net/api/v1/admin/state/delete", input)
-        // .then((response) => {
-        // let state_data = response.data.data.states;
-        // state_data.forEach((element) => {
-        //   element.value = element.id;
-        //   element.text = element.name;
-        // });
-        // this.allStates = state_data;
-        // console.log("all states", this.allStates);
-        // })
+        .post("http://api.quotebuddy.net/api/v1/admin/county/delete", input)
         .catch((e) => {
           console.log("error", e);
         });
-        this.getState();
+      this.getCounty();
     },
   },
 };
 </script>
-
-<style>
+  
+  <style>
 </style>

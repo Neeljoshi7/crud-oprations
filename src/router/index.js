@@ -95,6 +95,20 @@ const router = new VueRouter({
       },
     },
     {
+      path: "/countylist",
+      name: "countylist",
+      component: () => import("@/views/CountyList.vue"),
+      meta: {
+        pageTitle: "County List",
+        breadcrumb: [
+          {
+            text: "County List",
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: "/statelist",
       name: "statelist",
       component: () => import("@/views/StateList.vue"),

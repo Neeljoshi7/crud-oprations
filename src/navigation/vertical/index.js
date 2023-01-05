@@ -29,5 +29,10 @@ export default [
     route: 'statelist',
     icon: 'UsersIcon',
   },
+  {
+    title: 'County list',
+    route: 'countylist',
+    icon: 'UsersIcon',
+  },
 
 ]
