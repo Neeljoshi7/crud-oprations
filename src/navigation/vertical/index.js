@@ -27,11 +27,16 @@ export default [
   {
     title: 'State list',
     route: 'statelist',
-    icon: 'UsersIcon',
+    icon: 'GlobeIcon',
   },
   {
     title: 'County list',
     route: 'countylist',
+    icon: 'MapPinIcon',
+  },
+  {
+    title: 'Coustomer list',
+    route: 'customerlist',
     icon: 'UsersIcon',
   },
 

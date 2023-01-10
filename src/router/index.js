@@ -123,6 +123,20 @@ const router = new VueRouter({
       },
     },
     {
+      path: "/customerlist",
+      name: "customerlist",
+      component: () => import("@/views/CustomerList.vue"),
+      meta: {
+        pageTitle: "Customer List",
+        breadcrumb: [
+          {
+            text: "Customer List",
+            active: true,
+          },
+        ],
+      },
+    },
+    {
       path: "/",
       name: "login",
       component: () => import("@/views/Login.vue"),

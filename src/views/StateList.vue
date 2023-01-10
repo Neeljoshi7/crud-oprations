@@ -5,15 +5,6 @@
       @closeSidebar="stateSidebar = !stateSidebar"
       :formTitle="titleForm"
     >
-      <!-- 
-      :nameValue="editEmployeeData.name"
-      :salaryValue="editEmployeeData.salary"
-      :ageValue="editEmployeeData.age"
-      :contactValue="editEmployeeData.phoneNo"
-      :addressValue="editEmployeeData.address"
-      :submitButton="submitBtn"
-      :cancelButton="cancelBtn"
-     -->
       <template #body>
         <b-form class="p-2">
           <b-form-group label="State Name" label-for="state-name">
@@ -86,6 +77,12 @@
             md="6"
             class="d-flex align-items-center justify-content-start mb-1 mb-md-0"
           >
+            <h5 class="mb-0">Short By :</h5>
+            <b-form-select
+              :options="options"
+              v-model="selectOption"
+              class="w-50 ml-1"
+            />
           </b-col>
           <!-- Search -->
           <b-col cols="12" md="6">
@@ -99,15 +96,14 @@
                 variant="primary"
                 class="mr-1"
                 @click="
-                  ((stateSidebar = !stateSidebar), (addState = !addState)),
-                    (titleForm = 'Add State')
+                  ((stateSidebar = !stateSidebar), (addState = true)),
+                    (titleForm = 'Add State'),
+                    ((state_code = null), (state_name = null))
                 "
               >
                 <span class="text-nowrap">Add New State</span>
               </b-button>
-              <b-button
-                variant="warning"
-              >
+              <b-button variant="warning">
                 <span class="text-nowrap">Restore</span>
               </b-button>
             </div>
@@ -123,6 +119,7 @@
         :current-page="currentPage"
         :fields="fields"
         hover
+        striped
       >
         <template #cell(actions)="states">
           <feather-icon
@@ -155,6 +152,7 @@
       ok-variant="danger"
       ok-title="Accept"
       modal-class="modal-danger"
+      ref="delete-modal"
       centered
       title="Delete"
     >
@@ -162,9 +160,10 @@
         Do you really want to delete ?
 
         <div>
-          <b-form-checkbox v-model="permanent_delete" value="A">
+          <b-form-checkbox v-model="permanent_delete" :value="true">
             Delete permanent
           </b-form-checkbox>
+          {{ permanent_delete }}
         </div>
       </b-card-text>
       <template #modal-footer>
@@ -197,6 +196,7 @@ import {
   BButton,
   BTable,
   BForm,
+  BFormSelect,
   BFormGroup,
   BFormFile,
   BFormInput,
@@ -219,6 +219,7 @@ export default {
     BTable,
     BForm,
     BFormGroup,
+    BFormSelect,
     BFormCheckbox,
     BFormFile,
     BFormInput,
@@ -244,6 +245,7 @@ export default {
       deleteId: null,
       state_name: null,
       state_code: null,
+      selectOption: 3,
       permanent_delete: false,
       newState: {
         name: null,
@@ -252,19 +254,21 @@ export default {
       stateSidebar: false,
       addState: false,
       allStates: null,
-      duplicateStates:null,
+      duplicateStates: null,
       titleForm: null,
       perPage: 10,
       currentPage: 1,
+      // newInsertedStates:null,
       showEntries: [5, 10, 20, 30, 40],
+      options: [
+        { text: "A - Z", value: 1 },
+        { text: "Z - A", value: 2 },
+        { text: "Most Recent", value: 3 },
+      ],
       fields: [
         {
-          key: "id",
-          label: "#",
-        },
-        {
           key: "name",
-          label: "Name",
+          label: "State Name",
         },
         {
           key: "code",
@@ -279,11 +283,48 @@ export default {
       ],
     };
   },
-  watch:{
-    searchData(){
-      this.allStates = duplicateStates.projects.filter(function (val) {
+  watch: {
+    searchData(nv) {
+      this.allStates = this.duplicateStates.filter(function (val) {
         return val.name.toUpperCase().indexOf(nv.toUpperCase()) !== -1;
       });
+    },
+    selectOption(so) {
+      if (so) {
+        if (so == 1) {
+          this.allStates.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          });
+        }
+        if (so == 2) {
+          this.allStates.sort((a, b) => {
+            if (a.name < b.name) {
+              return 1;
+            }
+            if (a.name > b.name) {
+              return -1;
+            }
+            return 0;
+          });
+        }
+        if (so == 3) {
+          this.allStates.sort((a, b) => {
+            if (a.created_at < b.created_at) {
+              return 1;
+            }
+            if (a.created_at > b.created_at) {
+              return -1;
+            }
+            return 0;
+          });
+        }
+      }
     },
   },
   mounted() {
@@ -291,7 +332,7 @@ export default {
   },
   computed: {
     rows() {
-      return this.allStates.length;
+      return this.allStates?.length;
     },
   },
   methods: {
@@ -307,9 +348,8 @@ export default {
             element.value = element.id;
             element.text = element.name;
           });
-          this.allStates = state_data;
           this.duplicateStates = state_data;
-          console.log("all states", this.allStates);
+          this.allStates = state_data;
         })
         .catch((e) => {
           console.log("error", e);
@@ -317,12 +357,11 @@ export default {
     },
 
     addNewState() {
-      // this.titleForm = "Add New State";
       this.callCreateStateApi();
       this.getState();
     },
     editState(state) {
-      console.log("state", state);
+      // console.log("state", state);
       this.state_id = state.id;
       this.state_name = state.name;
       this.state_code = state.code;
@@ -339,15 +378,6 @@ export default {
       };
       await this.$axios
         .post("http://api.quotebuddy.net/api/v1/admin/state/update", input)
-        // .then((response) => {
-        // let state_data = response.data.data.states;
-        // state_data.forEach((element) => {
-        //   element.value = element.id;
-        //   element.text = element.name;
-        // });
-        // this.allStates = state_data;
-        // console.log("all states", this.allStates);
-        // })
         .catch((e) => {
           console.log("error", e);
         });
@@ -356,13 +386,27 @@ export default {
       this.stateSidebar = !this.stateSidebar;
     },
     async callCreateStateApi() {
+      let insertNewState;
+      let count = 0;
       this.stateSidebar = !this.stateSidebar;
       let obj = localStorage.getItem("access_token");
       this.token = obj;
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
 
-      let insertNewState = this.newState;
-
+      this.allStates.forEach((state) => {
+        // console.log("state", state)
+        if (state.name == this.state_name || state.code == this.state_code) {
+          alert("State Already exist");
+          count++;
+          return;
+        }
+        if (count == 0) {
+          insertNewState = {
+            name: this.state_name,
+            code: this.state_code,
+          };
+        }
+      });
       await this.$axios
         .post(
           "http://api.quotebuddy.net/api/v1/admin/state/create",
@@ -375,15 +419,15 @@ export default {
             element.text = element.name;
           });
           this.allStates = state_data;
-          console.log("all states", this.allStates);
+          // console.log("all states", this.allStates);
         })
         .catch((e) => {
           console.log("error", e);
         });
     },
 
-   async deleteState() {
-      console.log("this.delte :", this.deleteId);
+    async deleteState() {
+      // console.log("this.delte :", this.deleteId);
 
       let input = {
         id: this.deleteId,
@@ -392,19 +436,12 @@ export default {
 
       await this.$axios
         .post("http://api.quotebuddy.net/api/v1/admin/state/delete", input)
-        // .then((response) => {
-        // let state_data = response.data.data.states;
-        // state_data.forEach((element) => {
-        //   element.value = element.id;
-        //   element.text = element.name;
-        // });
-        // this.allStates = state_data;
-        // console.log("all states", this.allStates);
-        // })
         .catch((e) => {
           console.log("error", e);
         });
-        this.getState();
+      this.$refs["delete-modal"].hide();
+
+      this.getState();
     },
   },
 };

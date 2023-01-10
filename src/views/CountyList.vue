@@ -5,15 +5,6 @@
       @closeSidebar="countySidebar = !countySidebar"
       :formTitle="titleForm"
     >
-      <!-- 
-        :nameValue="editEmployeeData.name"
-        :salaryValue="editEmployeeData.salary"
-        :ageValue="editEmployeeData.age"
-        :contactValue="editEmployeeData.phoneNo"
-        :addressValue="editEmployeeData.address"
-        :submitButton="submitBtn"
-        :cancelButton="cancelBtn"
-       -->
       <template #body>
         <b-form class="p-2">
           <b-form-group label="County Name" label-for="county-name">
@@ -29,7 +20,6 @@
           <b-form-select
             v-model="stateSelected"
             :options="allStates"
-            @input="getCounties"
             class="mb-3"
           />
           <div v-if="addCounty == true">
@@ -66,7 +56,7 @@
               class="float-right mr-1"
               @click="editSubmitCounty"
             >
-              Edit State
+              Edit county
             </b-button>
           </div>
         </b-form>
@@ -81,6 +71,12 @@
             md="6"
             class="d-flex align-items-center justify-content-start mb-1 mb-md-0"
           >
+            <h5 class="mb-0">Short By :</h5>
+            <b-form-select
+              :options="options"
+              v-model="selectOption"
+              class="w-50 ml-1"
+            />
           </b-col>
           <!-- Search -->
           <b-col cols="12" md="6">
@@ -94,8 +90,9 @@
                 variant="primary"
                 class="mr-1"
                 @click="
-                  ((countySidebar = !countySidebar), (addCounty = !addCounty)),
-                    (titleForm = 'Add County')
+                  ((countySidebar = !countySidebar), (addCounty = true)),
+                    (titleForm = 'Add County'),
+                    ((county_name = null), (stateSelected = null))
                 "
               >
                 <span class="text-nowrap">Add New County</span>
@@ -148,6 +145,7 @@
       ok-variant="danger"
       ok-title="Accept"
       modal-class="modal-danger"
+      ref="delete-modal"
       centered
       title="Delete"
     >
@@ -183,10 +181,12 @@
 import vSelect from "vue-select";
 import Ripple from "vue-ripple-directive";
 import SidebarForm from "@/components/SidebarForm.vue";
+BCardText;
 import {
   BCard,
   BRow,
   BCol,
+  BCardText,
   BButton,
   BTable,
   BForm,
@@ -213,6 +213,7 @@ export default {
     BTable,
     BForm,
     BFormGroup,
+    BCardText,
     BFormCheckbox,
     BFormFile,
     BFormInput,
@@ -235,33 +236,30 @@ export default {
   data() {
     return {
       searchData: null,
-      stateSelected:null,
+      stateSelected: null,
       state_id: null,
       deleteId: null,
       county_name: null,
-      state_code: null,
       permanent_delete: false,
-      newCounty: {
-        name: null,
-        state: null,
-      },
+      selectOption: 3,
+      options: [
+        { text: "A to Z", value: 1 },
+        { text: "Z to A", value: 2 },
+        { text: "Most Recent", value: 3 },
+      ],
       countySidebar: false,
       addCounty: false,
       allCounties: null,
       allStates: null,
-      duplicateStates: null,
+      duplicateCounties: null,
       titleForm: null,
       perPage: 10,
       currentPage: 1,
       showEntries: [5, 10, 20, 30, 40],
       fields: [
         {
-          key: "id",
-          label: "#",
-        },
-        {
           key: "name",
-          label: "Name",
+          label: "County Name",
         },
         {
           key: "state.name",
@@ -278,18 +276,55 @@ export default {
   },
   watch: {
     searchData(nv) {
-      this.allCounties = this.duplicateStates.filter(function (val) {
+      this.allCounties = this.duplicateCounties.filter(function (val) {
         return val.name.toUpperCase().indexOf(nv.toUpperCase()) !== -1;
       });
+    },
+    selectOption(so) {
+      if (so) {
+        if (so == 1) {
+          var abcd = this.allCounties.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+            return 0;
+          });
+        }
+        if (so == 2) {
+          this.allCounties.sort((a, b) => {
+            if (a.name < b.name) {
+              return 1;
+            }
+            if (a.name > b.name) {
+              return -1;
+            }
+            return 0;
+          });
+        }
+        if (so == 3) {
+          this.allCounties.sort((a, b) => {
+            if (a.created_at < b.created_at) {
+              return 1;
+            }
+            if (a.created_at > b.created_at) {
+              return -1;
+            }
+            return 0;
+          });
+        }
+      }
     },
   },
   mounted() {
     this.getCounty();
-    this.getState()
+    this.getState();
   },
   computed: {
     rows() {
-      return this.allCounties.length;
+      return this.allCounties?.length;
     },
   },
   methods: {
@@ -298,9 +333,7 @@ export default {
       this.token = obj;
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
       await this.$axios
-        .post(
-          "http://api.quotebuddy.net/api/v1/admin/state/list"
-        )
+        .post("http://api.quotebuddy.net/api/v1/admin/state/list")
         .then((response) => {
           let state_data = response.data.data.states;
           state_data.forEach((element) => {
@@ -308,7 +341,7 @@ export default {
             element.text = element.name;
           });
           this.allStates = state_data;
-          console.log("state_data", state_data);
+        //   console.log("state_data", state_data);
         })
         .catch((e) => {
           console.log("error", e);
@@ -324,11 +357,11 @@ export default {
           let county_data = response.data.data.county;
           county_data.forEach((element) => {
             element.text = element.name;
-            console.log("Neel", element)
+            // console.log("Neel", element);
           });
           this.allCounties = county_data;
-          this.duplicateStates = county_data;
-          console.log("all Counties", this.allCounties);
+          this.duplicateCounties = county_data;
+        //   console.log("all Counties", this.allCounties);
         })
         .catch((e) => {
           console.log("error", e);
@@ -337,7 +370,6 @@ export default {
 
     addNewCounty() {
       this.callCreateCountyApi();
-      this.getCounty();
     },
     editCounties(county) {
       this.state_id = county.id;
@@ -352,7 +384,7 @@ export default {
       let input = {
         id: this.state_id,
         name: this.county_name,
-        state_id : this.stateSelected
+        state_id: this.stateSelected,
       };
       await this.$axios
         .post("http://api.quotebuddy.net/api/v1/admin/county/update", input)
@@ -370,9 +402,9 @@ export default {
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
 
       let insertNewCounty = {
-        name : this.county_name,
-        state_id: this.stateSelected
-      }
+        name: this.county_name,
+        state_id: this.stateSelected,
+      };
 
       await this.$axios
         .post(
@@ -386,11 +418,12 @@ export default {
             element.text = element.name;
           });
           this.allCounties = county_data;
-          console.log("all states", this.allCounties);
+        //   console.log("all states", this.allCounties);
         })
         .catch((e) => {
           console.log("error", e);
         });
+        this.getCounty();
     },
 
     async deleteCounty() {
@@ -403,6 +436,7 @@ export default {
         .catch((e) => {
           console.log("error", e);
         });
+      this.$refs["delete-modal"].hide();
       this.getCounty();
     },
   },
