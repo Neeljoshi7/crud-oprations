@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <!-- Sidebar -->
     <SidebarForm
       :isActive="countySidebar"
       @closeSidebar="countySidebar = !countySidebar"
@@ -65,6 +67,8 @@
 
     <b-card no-body class="mb-0">
       <div class="m-2">
+
+        <!-- Table Nav Menu -->
         <b-row>
           <b-col
             cols="12"
@@ -105,6 +109,7 @@
         </b-row>
       </div>
 
+      <!-- County List Table -->
       <b-table
         ref="refUserListTable"
         class="position-relative"
@@ -130,6 +135,8 @@
           />
         </template>
       </b-table>
+
+      <!-- Pagination -->
       <b-pagination
         class="justify-content-end p-1"
         v-model="currentPage"
@@ -139,6 +146,7 @@
       ></b-pagination>
     </b-card>
 
+    <!-- Delete Modal -->
     <b-modal
       id="modal-danger"
       ok-only
@@ -275,11 +283,15 @@ export default {
     };
   },
   watch: {
+
+    // Search
     searchData(nv) {
       this.allCounties = this.duplicateCounties.filter(function (val) {
         return val.name.toUpperCase().indexOf(nv.toUpperCase()) !== -1;
       });
     },
+
+    // Table Sorting
     selectOption(so) {
       if (so) {
         if (so == 1) {
@@ -328,10 +340,14 @@ export default {
     },
   },
   methods: {
+
+    // Get States
     async getState() {
       let obj = localStorage.getItem("access_token");
       this.token = obj;
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
+
+      // State List API
       await this.$axios
         .post("http://api.quotebuddy.net/api/v1/admin/state/list")
         .then((response) => {
@@ -341,33 +357,35 @@ export default {
             element.text = element.name;
           });
           this.allStates = state_data;
-        //   console.log("state_data", state_data);
-        })
-        .catch((e) => {
-          console.log("error", e);
-        });
-    },
-    async getCounty() {
-      let obj = localStorage.getItem("access_token");
-      this.token = obj;
-      this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
-      await this.$axios
-        .post("http://api.quotebuddy.net/api/v1/admin/county/list")
-        .then((response) => {
-          let county_data = response.data.data.county;
-          county_data.forEach((element) => {
-            element.text = element.name;
-            // console.log("Neel", element);
-          });
-          this.allCounties = county_data;
-          this.duplicateCounties = county_data;
-        //   console.log("all Counties", this.allCounties);
         })
         .catch((e) => {
           console.log("error", e);
         });
     },
 
+    // Get Counties
+    async getCounty() {
+      let obj = localStorage.getItem("access_token");
+      this.token = obj;
+      this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
+
+      // County List API
+      await this.$axios
+        .post("http://api.quotebuddy.net/api/v1/admin/county/list")
+        .then((response) => {
+          let county_data = response.data.data.county;
+          county_data.forEach((element) => {
+            element.text = element.name;
+          });
+          this.allCounties = county_data;
+          this.duplicateCounties = county_data;
+        })
+        .catch((e) => {
+          console.log("error", e);
+        });
+    },
+
+    // Add New County
     addNewCounty() {
       this.callCreateCountyApi();
     },
@@ -380,57 +398,94 @@ export default {
       this.titleForm = "Edit County";
     },
 
+    // Edit County
     async editSubmitCounty() {
-      let input = {
-        id: this.state_id,
-        name: this.county_name,
-        state_id: this.stateSelected,
-      };
-      await this.$axios
-        .post("http://api.quotebuddy.net/api/v1/admin/county/update", input)
-        .catch((e) => {
-          console.log("error", e);
-        });
+      let count = 0;
+      this.allCounties.forEach((county) => {
+        if (
+          county.name == this.county_name &&
+          county.state_id == this.stateSelected
+        ) {
+          alert("County Already exist");
+          count++;
+          return;
+        }
+      });
+      if (count == 0) {
+        let input = {
+          id: this.state_id,
+          name: this.county_name,
+          state_id: this.stateSelected,
+        };
 
-      this.getCounty();
+        // edit county API
+        await this.$axios
+          .post("http://api.quotebuddy.net/api/v1/admin/county/update", input)
+          .catch((e) => {
+            console.log("error", e);
+          });
+
+        this.getCounty();
+      }
+
       this.countySidebar = !this.countySidebar;
     },
+
+    // Call create county API
     async callCreateCountyApi() {
+      let insertNewCounty;
+      let count = 0;
       this.countySidebar = !this.countySidebar;
       let obj = localStorage.getItem("access_token");
       this.token = obj;
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
 
-      let insertNewCounty = {
-        name: this.county_name,
-        state_id: this.stateSelected,
-      };
+      this.allCounties.forEach((county) => {
+        if (
+          county.name == this.county_name &&
+          county.state_id == this.stateSelected
+        ) {
+          alert("County Already exist");
+          count++;
+          return;
+        }
+      });
 
-      await this.$axios
-        .post(
-          "http://api.quotebuddy.net/api/v1/admin/county/create",
-          insertNewCounty
-        )
-        .then((response) => {
-          let county_data = response.data.data.counties;
-          county_data.forEach((element) => {
-            element.value = element.id;
-            element.text = element.name;
+      if (count == 0) {
+        insertNewCounty = {
+          name: this.county_name,
+          state_id: this.stateSelected,
+        };
+
+        // Create County API
+        await this.$axios
+          .post(
+            "http://api.quotebuddy.net/api/v1/admin/county/create",
+            insertNewCounty
+          )
+          .then((response) => {
+            let county_data = response.data.data.counties;
+            county_data.forEach((element) => {
+              element.value = element.id;
+              element.text = element.name;
+            });
+            this.allCounties = county_data;
+          })
+          .catch((e) => {
+            console.log("error", e);
           });
-          this.allCounties = county_data;
-        //   console.log("all states", this.allCounties);
-        })
-        .catch((e) => {
-          console.log("error", e);
-        });
-        this.getCounty();
+      }
+      this.getCounty();
     },
 
+    // Delete County
     async deleteCounty() {
       let input = {
         id: this.deleteId,
         permanent_delete: this.permanent_delete,
       };
+
+      // Delete County API
       await this.$axios
         .post("http://api.quotebuddy.net/api/v1/admin/county/delete", input)
         .catch((e) => {

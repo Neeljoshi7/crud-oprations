@@ -1,5 +1,8 @@
 <template>
   <div>
+
+    <!-- Sidebar -->
+
     <SidebarForm
       :isActive="stateSidebar"
       @closeSidebar="stateSidebar = !stateSidebar"
@@ -15,7 +18,6 @@
               trim
               placeholder="ex. Gujarat"
             />
-            <!-- :value="editEmployeeData.name" -->
           </b-form-group>
           <b-form-group label="State Code" label-for="code">
             <b-form-input
@@ -25,7 +27,6 @@
               placeholder="GJ"
               v-model="state_code"
             />
-            <!-- :value="editEmployeeData.salary" -->
           </b-form-group>
 
           <div v-if="addState == true">
@@ -71,6 +72,8 @@
 
     <b-card no-body class="mb-0">
       <div class="m-2">
+
+        <!-- Table Nav Menu -->
         <b-row>
           <b-col
             cols="12"
@@ -84,6 +87,7 @@
               class="w-50 ml-1"
             />
           </b-col>
+
           <!-- Search -->
           <b-col cols="12" md="6">
             <div class="d-flex align-items-center justify-content-end">
@@ -111,6 +115,8 @@
         </b-row>
       </div>
 
+
+      <!-- State List Table -->
       <b-table
         ref="refUserListTable"
         class="position-relative"
@@ -137,6 +143,9 @@
           />
         </template>
       </b-table>
+
+
+      <!-- Pagination -->
       <b-pagination
         class="justify-content-end p-1"
         v-model="currentPage"
@@ -146,6 +155,7 @@
       ></b-pagination>
     </b-card>
 
+    <!-- Delete Modal -->
     <b-modal
       id="modal-danger"
       ok-only
@@ -163,9 +173,10 @@
           <b-form-checkbox v-model="permanent_delete" :value="true">
             Delete permanent
           </b-form-checkbox>
-          {{ permanent_delete }}
         </div>
       </b-card-text>
+
+      <!-- Modal Footer -->
       <template #modal-footer>
         <div class="w-100">
           <b-button
@@ -258,7 +269,6 @@ export default {
       titleForm: null,
       perPage: 10,
       currentPage: 1,
-      // newInsertedStates:null,
       showEntries: [5, 10, 20, 30, 40],
       options: [
         { text: "A - Z", value: 1 },
@@ -361,7 +371,6 @@ export default {
       this.getState();
     },
     editState(state) {
-      // console.log("state", state);
       this.state_id = state.id;
       this.state_name = state.name;
       this.state_code = state.code;
@@ -371,18 +380,30 @@ export default {
     },
 
     async editSubmitState() {
-      let input = {
-        id: this.state_id,
-        name: this.state_name,
-        code: this.state_code,
-      };
-      await this.$axios
-        .post("http://api.quotebuddy.net/api/v1/admin/state/update", input)
-        .catch((e) => {
-          console.log("error", e);
-        });
+      let count = 0;
+      this.allStates.forEach((state) => {
+        if (state.name == this.state_name && state.code == this.state_code) {
+          alert("State Already exist");
+          count++;
+          return;
+        }
+      });
 
-      this.getState();
+      if(count == 0){
+        let input = {
+          id: this.state_id,
+          name: this.state_name,
+          code: this.state_code,
+        };
+        await this.$axios
+          .post("http://api.quotebuddy.net/api/v1/admin/state/update", input)
+          .catch((e) => {
+            console.log("error", e);
+          });
+  
+        this.getState();
+      }
+
       this.stateSidebar = !this.stateSidebar;
     },
     async callCreateStateApi() {
@@ -394,41 +415,38 @@ export default {
       this.$axios.defaults.headers.common["Authorization"] = "Bearer " + obj;
 
       this.allStates.forEach((state) => {
-        // console.log("state", state)
-        if (state.name == this.state_name || state.code == this.state_code) {
+        if (state.name == this.state_name && state.code == this.state_code) {
           alert("State Already exist");
           count++;
           return;
         }
-        if (count == 0) {
-          insertNewState = {
-            name: this.state_name,
-            code: this.state_code,
-          };
-        }
       });
-      await this.$axios
-        .post(
-          "http://api.quotebuddy.net/api/v1/admin/state/create",
-          insertNewState
-        )
-        .then((response) => {
-          let state_data = response.data.data.states;
-          state_data.forEach((element) => {
-            element.value = element.id;
-            element.text = element.name;
+
+      if (count == 0) {
+        insertNewState = {
+          name: this.state_name,
+          code: this.state_code,
+        };
+        await this.$axios
+          .post(
+            "http://api.quotebuddy.net/api/v1/admin/state/create",
+            insertNewState
+          )
+          .then((response) => {
+            let state_data = response.data.data.states;
+            state_data.forEach((element) => {
+              element.value = element.id;
+              element.text = element.name;
+            });
+            this.allStates = state_data;
+          })
+          .catch((e) => {
+            console.log("error", e);
           });
-          this.allStates = state_data;
-          // console.log("all states", this.allStates);
-        })
-        .catch((e) => {
-          console.log("error", e);
-        });
+      }
     },
 
     async deleteState() {
-      // console.log("this.delte :", this.deleteId);
-
       let input = {
         id: this.deleteId,
         permanent_delete: this.permanent_delete,
